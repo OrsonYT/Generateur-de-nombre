@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Comic Neue', cursive;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: linear-gradient(-45deg, #e74c3c, #f39c12, #e74c3c, #f39c12);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+}
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+#container {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  color: #e74c3c;
+}
+h1 {
+  font-size: 2em;
+  margin-bottom: 25px;
+  color: #e74c3c;
+}
+#maxNumber {
+  padding: 15px;
+  font-size: 1.2em;
+  width: 100px;
+  border: 3px solid #e74c3c;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  outline: none;
+  font-family: 'Comic Neue', cursive;
+  color: #e74c3c;
+}
+#maxNumber:focus {
+  border-color: #f39c12;
+}
+#roulette {
+  font-size: 3em;
+  margin: 20px 0;
+  padding: 25px;
+  border: 5px solid #f39c12;
+  border-radius: 20px;
+  background-color: #fef9f1;
+  color: #e74c3c;
+  min-height: 80px;
+  transition: all 0.5s ease;
+}
+.btn {
+  padding: 15px 30px;
+  font-size: 1.1em;
+  background: linear-gradient(135deg, #e74c3c, #f39c12);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+  font-family: 'Comic Neue', cursive;
+  margin: 10px;
+}
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+#buttons {
+  display: flex;
+  justify-content: space-between;
+}
