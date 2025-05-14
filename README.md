@@ -14,5 +14,3 @@ Tirage animé avec effet roulette
 Réinitialisation possible
 Design coloré et responsive
 🖥️ Développé en HTML, CSS et JavaScript pur.
-
-<img src="https://drive.google.com/uc?export=view&id=1uwB_SUE7Qf7Idg8-AxrIPOne1MFSUdkJ" alt="Description de l'image" width="1000">
