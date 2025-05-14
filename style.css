@@ -13,6 +13,7 @@ body {
   background: linear-gradient(-45deg, #e74c3c, #f39c12, #e74c3c, #f39c12);
   background-size: 400% 400%;
   animation: gradient 8s ease infinite;
+  position: relative; /* Pour positionner les éléments absolus par rapport au body */
 }
 @keyframes gradient {
   0% { background-position: 0% 50%; }
@@ -80,4 +81,58 @@ h1 {
 #buttons {
   display: flex;
   justify-content: space-between;
+}
+
+/* Styles pour le journal des mises à jour */
+#update-log {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #e74c3c, #f39c12);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  max-height: 200px; /* Limite la hauteur et ajoute un scroll si nécessaire */
+  overflow-y: auto;
+  background-size: 200% 200%;
+  animation: gradient 4s ease infinite; /* Réutilise l'animation de gradient */
+  z-index: 10; /* Pour s'assurer qu'il est au-dessus des autres éléments si besoin */
+}
+
+#update-log h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#update-log ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+  font-size: 0.9em;
+}
+
+#update-log li {
+  margin-bottom: 5px;
+}
+
+/* Styles pour le bouton de plein écran */
+#fullscreen-button-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+#fullscreen-button-container .btn {
+  padding: 10px; /* Ajuster le padding pour un bouton icône */
+  margin: 0; /* Enlever la marge par défaut des .btn si besoin */
+}
+
+#fullscreen-button-container .btn svg {
+  display: block; /* Pour un meilleur alignement de l'SVG dans le bouton */
 }
