@@ -2,15 +2,16 @@ const rouletteDiv = document.getElementById('roulette');
 const lancerBtn = document.getElementById('lancer');
 const resetBtn = document.getElementById('reset');
 const maxNumberInput = document.getElementById('maxNumber');
-const fullscreenButton = document.getElementById('fullscreen'); // Ajout de la constante
+const fullscreenButton = document.getElementById('fullscreen');
 
 let nombresDisponibles = [];
-
+let dernierMax = null; 
 function initialiserListe(max) {
   nombresDisponibles = [];
-  for (let i = 0; i <= max; i++) {
+  for (let i = 1; i <= max; i++) { // Commence à 1 pour éviter le 0 si tu veux
     nombresDisponibles.push(i);
   }
+  dernierMax = max; 
 }
 
 function choisirNombreUnique() {
@@ -22,6 +23,7 @@ function choisirNombreUnique() {
   }
 
   let interval = setInterval(() => {
+    // Affiche seulement les nombres encore disponibles
     const random = nombresDisponibles[Math.floor(Math.random() * nombresDisponibles.length)];
     rouletteDiv.textContent = random;
   }, 80);
@@ -45,7 +47,7 @@ lancerBtn.addEventListener('click', () => {
     return;
   }
 
-  if (nombresDisponibles.length === 0 || nombresDisponibles.length - 1 !== max) { // Réinitialise si la liste est vide ou si le max a changé
+  if (nombresDisponibles.length === 0 || max !== dernierMax) {
     initialiserListe(max);
   }
 
